@@ -5,8 +5,9 @@
 <link rel="stylesheet" href="WarehCSS.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
 <script>
+	
 //Load table with goods
-function loadGoods(){
+function loadGoods() {
 	$.post('WarehApi.php',{action:'get', warehouseId:$('.warehouseList').val()}, function(data){//request for WarehApi.php
 		obj = $.parseJSON(data);// save JSON format
 		
@@ -21,7 +22,7 @@ function loadGoods(){
 		+'</tr>';
 		
 		//generate table with items
-		result = '';//string
+		result = ''; 
 		$.each(obj, function(key, value) {
 			result+= '<tr>';
 			result+= '<td>'+value.id+'</td> ';
@@ -47,7 +48,7 @@ $('.addGoods').html(caption+result);
 	elemsTotal = elems.length;
 	
 		for( var i = 0; i < elemsTotal; i++){
-			if($(elems[i]).attr('data-id') == remId ){
+			if($(elems[i]).attr('data-id') == remId) {
 				elemsQuant = $(elems[i]).html();
 				if(elemsQuant*1 < quant){
 					alert("Nedrikst norakstit vairak neka ir noliktava");
@@ -76,18 +77,18 @@ $('.addGoods').html(caption+result);
 };
 
 $(function(){
-//when changing the select value значения reload table 
-	$('.warehouseList').change(function(){
+//when changing the select value reload table 
+	$('.warehouseList').change(function() {
 		loadGoods();
 	});
 	
 //get select value
-	$.post('WarehApi.php', {action:'warehouseList'}, function(data){
+	$.post('WarehApi.php', {action:'warehouseList'}, function(data) {
 		obj = $.parseJSON(data);
 		
 		result='';
 		
-		$.each(obj, function(key,value){
+		$.each(obj, function(key,value) {
 			result+= '<option value="'+value.id+'">';
 			result+= value.warehName;
 			result+= '</option>';
@@ -97,7 +98,7 @@ $(function(){
 	});
 
 //Send data to Warehapi.php for saving database
-	$('.goodsForm').submit(function(event){
+	$('.goodsForm').submit(function(event) {
 		event.preventDefault();
 		
 		data = {
@@ -112,20 +113,20 @@ $(function(){
 		$('.name').val('');
 		$('.quantity').val('');
 		$('.price').val('');
-		$.post('WarehApi.php', data, function(){
+		$.post('WarehApi.php', data, function() {
 			loadGoods();
 		});
 	});
 });
 
 //current date at the top of the page
-function go(){
+function go() {
 	Data = new Date();
 	Year = Data.getFullYear();
 	Month = Data.getMonth();
 	Day = Data.getDate();
 
-switch (Month){ 
+switch (Month) { 
 	case 0: fMonth="janvari"; break;
 	case 1: fMonth="februari"; break;
 	case 2: fMonth="маrtu"; break;
