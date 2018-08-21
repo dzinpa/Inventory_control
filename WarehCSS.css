@@ -1,0 +1,102 @@
+/* table*/
+.addGoods {
+border-spacing:0px;
+text-align:center;
+}
+
+.addGoods caption{
+	text-transform:uppercase;
+	padding-bottom:10px;
+	padding-top:15px;
+}
+
+.addGoods th{
+	border:1px solid #ABADB3;
+	padding:5px;
+}
+
+.addGoods td{
+	border:1px solid #ABADB3;
+	padding:5px;
+}
+.tableBox{
+	float:left;
+	margin:20px;
+}
+.warehouseList{
+	//width:80px;
+	height:30px;
+	color:blue;
+	text-transform:uppercase;
+}
+
+/*form*/
+.goodsForm{
+	border-bottom:1px solid;
+	margin-bottom:5px;
+
+}
+
+.form{
+	margin-top:20px;
+	border:1px solid ;
+	width:500px;
+	height:500px;
+	padding:10px;
+	float:left;
+}
+
+h3{
+	text-align:center;
+}
+
+.size{
+	display:inline-block;
+	width:90px;
+}
+
+.name{
+	width:220px;
+	height:30px;
+}
+.quantity, .price, .remId, .quant{
+	width:50px;
+	height:25px;
+}
+
+.subm, .remove{
+	width:80px;
+	padding:3px;
+	margin-left:130px;
+	border-radius:3px;
+	border:1px solid #FEB6B6;
+	background: linear-gradient(to bottom, rgba(254,187,187,1) 0%,rgba(254,144,144,1) 45%,rgba(255,92,92,1) 100%);
+	color:red;
+}
+		
+.subm:hover,.remove:hover{
+	background:linear-gradient(to bottom, rgba(208,228,247,1) 0%,rgba(115,177,231,1) 24%,rgba(10,119,213,1) 50%,rgba(83,159,225,1) 79%,rgba(135,188,234,1) 100%);
+	border:1px solid #B2D4F2;
+	color:white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
