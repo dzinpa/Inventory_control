@@ -6,13 +6,13 @@ include_once('WarehFunc.php');
  *Get request from Warehouse.php and call function from WarehFunc
  */
 
-if(!isset($_REQUEST['action'])){
+if(!isset($_REQUEST['action'])) {
 	die('Action not find');
 }
 
-switch($_REQUEST ['action']){
+switch($_REQUEST ['action']) {
 	case 'warehouseList':
-		$warehouseList=getWarehouseList($link);
+		$warehouseList = getWarehouseList($link);
 		echo json_encode($warehouseList);
 		break;
 	
@@ -23,12 +23,11 @@ switch($_REQUEST ['action']){
 		isset($_POST['init']) &&
 		isset($_POST['price']) &&
 		isset($_POST['warehouseId'])){
-			saveGoods($link,$_POST['name'],$_POST['quantity'],$_POST['init'],$_POST['price'],$_POST['warehouseId']);// вызываем функцию и передаем параметры в функцию из файла WarehFunc
-		}
+		 saveGoods($link,$_POST['name'],$_POST['quantity'],$_POST['init'],$_POST['price'],$_POST['warehouseId']);
 		break;
 		
 	case 'get': 
-		$goods=getGoods($link,$_POST['warehouseId']);
+		$goods = getGoods($link,$_POST['warehouseId']);
 		echo json_encode($goods);
 		break;
 		
